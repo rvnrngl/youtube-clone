@@ -8,6 +8,7 @@ import {
   BiUser,
 } from "react-icons/bi";
 import { BsYoutube } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export const NavBar: React.FC = () => {
   return (
@@ -18,10 +19,10 @@ export const NavBar: React.FC = () => {
           <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-200">
             <BiMenu className="cursor-pointer text-[1.6rem]" />
           </div>
-          <div className="flex cursor-pointer items-center gap-1">
+          <Link to="/" className="flex cursor-pointer items-center gap-1">
             <BsYoutube className="text-3xl text-red-500" />
             <span className="font-roboto text-xl font-bold">Youtube</span>
-          </div>
+          </Link>
         </div>
         {/* middle nav */}
         <div className="col-span-2 hidden w-full items-center gap-2 px-4 md:flex">
