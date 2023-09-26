@@ -5,7 +5,6 @@ import {
   BiBell,
   BiMicrophone,
   BiSearch,
-  BiUser,
 } from "react-icons/bi";
 import { BsYoutube } from "react-icons/bs";
 import { Link } from "react-router-dom";
