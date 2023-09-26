@@ -19,14 +19,20 @@ export const SideMenu: React.FC = () => {
         <BiBoltCircle className="text-2xl" />
         <span className="text-[0.7rem]">Shorts</span>
       </Link>
-      <button className="flex flex-col items-center justify-center gap-1 rounded-lg px-4 py-3 hover:bg-neutral-200/50 md:rounded-md md:px-6">
+      <Link
+        to="subscriptions"
+        className="flex flex-col items-center justify-center gap-1 rounded-lg px-4 py-3 hover:bg-neutral-200/50 md:rounded-md md:px-6"
+      >
         <BiWindows className="text-2xl" />
         <span className="text-[0.7rem]">Subs</span>
-      </button>
-      <button className="flex flex-col items-center justify-center gap-1 rounded-lg px-4 py-3 hover:bg-neutral-200/50 md:rounded-md md:px-6">
+      </Link>
+      <Link
+        to="library"
+        className="flex flex-col items-center justify-center gap-1 rounded-lg px-4 py-3 hover:bg-neutral-200/50 md:rounded-md md:px-6"
+      >
         <BiLibrary className="text-2xl" />
         <span className="text-[0.7rem]">Library</span>
-      </button>
+      </Link>
     </aside>
   );
 };

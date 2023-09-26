@@ -51,8 +51,12 @@ export const NavBar: React.FC = () => {
           <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-200">
             <BiBell className="text-2xl" />
           </div>
-          <div className="flex h-10 w-10 cursor-pointer  items-center justify-center rounded-full bg-neutral-400 hover:bg-neutral-200">
-            <BiUser className="text-2xl" />
+          <div className="flex h-10 w-10 cursor-pointer items-center  justify-center overflow-hidden rounded-full bg-neutral-400 hover:bg-neutral-200">
+            <img
+              src="https://i.pinimg.com/1200x/8d/ec/23/8dec23953cb4b536f0cf0b7734944e6c.jpg"
+              alt="user"
+              className="w-ful h-full"
+            />
           </div>
         </div>
       </div>

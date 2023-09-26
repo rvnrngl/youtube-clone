@@ -6,6 +6,9 @@ import App from "./routes/App";
 import { ErrorPage } from "./routes/ErrorPage";
 import { Home } from "./routes/Home";
 import { ShortsPage } from "./routes/ShortsPage";
+import { SubsPage } from "./routes/SubsPage";
+import { LibraryPage } from "./routes/LibraryPage";
+import WatchPage from "./routes/WatchPage";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +23,18 @@ const router = createBrowserRouter([
       {
         path: "shorts/:id",
         element: <ShortsPage />,
+      },
+      {
+        path: "subscriptions",
+        element: <SubsPage />,
+      },
+      {
+        path: "library",
+        element: <LibraryPage />,
+      },
+      {
+        path: "watch",
+        element: <WatchPage />,
       },
     ],
   },
