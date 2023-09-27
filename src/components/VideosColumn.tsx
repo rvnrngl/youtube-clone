@@ -11,7 +11,8 @@ export const VideosColumn = (props: VideoColumnProps) => {
     <div className="flex w-full flex-col gap-2">
       {videos.map((video: VideoProps, index: number) => {
         return (
-          <div
+          <a
+            href={`watch?id=${video.id}`}
             key={index}
             className="group flex w-full cursor-pointer flex-row items-start justify-between gap-2"
           >
@@ -35,7 +36,7 @@ export const VideosColumn = (props: VideoColumnProps) => {
             <div className="invisible flex items-center justify-center group-hover:visible">
               <BiDotsVerticalRounded size={20} />
             </div>
-          </div>
+          </a>
         );
       })}
     </div>

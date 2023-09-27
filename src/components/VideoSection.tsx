@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import videoData from "../data/data.json";
 import { useNavigate } from "react-router-dom";
+import { BiDotsVerticalRounded } from "react-icons/bi";
 
 export type VideoProps = {
   id: string;
@@ -56,18 +57,19 @@ export const VideoSection: React.FC = () => {
             onClick={() => handleNavigate(item)}
             onMouseEnter={() => handleEnter(index)}
             onMouseLeave={() => handleLeave(index)}
-            className="flex cursor-pointer flex-col gap-2 duration-300 ease-in-out hover:transition"
+            className="group flex cursor-pointer flex-col gap-2 duration-300 ease-in-out hover:transition"
           >
-            <video
-              ref={(video) => (videoRefs.current[index] = video)}
-              poster={item.thumbnailUrl}
-              src={item.videoUrl}
-              loop
-              muted
-              className="aspect-video h-full w-full overflow-hidden object-cover duration-300 hover:rounded-none hover:transition md:rounded-lg"
-            ></video>
+            <div className="aspect-video h-full w-full overflow-hidden bg-neutral-200 object-cover duration-300 hover:rounded-none hover:transition md:rounded-lg">
+              <video
+                ref={(video) => (videoRefs.current[index] = video)}
+                poster={item.thumbnailUrl}
+                src={item.videoUrl}
+                loop
+                muted
+              ></video>
+            </div>
             <div className="flex w-full items-start gap-1">
-              <div className="h-9 w-9 overflow-hidden rounded-full bg-orange-400">
+              <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-full bg-orange-400">
                 <img
                   src={item.thumbnailUrl}
                   alt={item.author}
@@ -75,13 +77,16 @@ export const VideoSection: React.FC = () => {
                 />
               </div>
               <div className="w-[calc(100%-36px)]">
-                <span className=" line-clamp-2 font-semibold leading-5">
+                <span className="line-clamp-1 font-semibold leading-5">
                   {item.title}
                 </span>
                 <span className="line-clamp-1 text-xs">{item.author}</span>
                 <span className="line-clamp-1 text-xs text-gray-400">
                   {item.uploadTime}
                 </span>
+              </div>
+              <div className="invisible justify-self-end group-hover:visible">
+                <BiDotsVerticalRounded />
               </div>
             </div>
           </div>
