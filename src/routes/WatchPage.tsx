@@ -9,6 +9,7 @@ import {
   BiLike,
   BiShare,
 } from "react-icons/bi";
+import Comments from "../components/Comments";
 
 const WatchPage: React.FC = () => {
   const query = useQuery();
@@ -18,8 +19,8 @@ const WatchPage: React.FC = () => {
   const [info] = videos.filter((video) => video.id === id);
 
   return (
-    <main className="mt-[80px] grid w-full grid-cols-1 gap-6 px-6 lg:grid-cols-6 lg:px-20">
-      <div className="col-span-4 flex w-full flex-col gap-3">
+    <main className="mt-[80px] grid w-full grid-cols-1 gap-6 px-6 lg:grid-cols-6 lg:grid-rows-3 lg:px-20">
+      <div className="col-span-4 flex w-full flex-col gap-3 lg:row-span-1">
         <video
           src={info.videoUrl}
           controls
@@ -74,7 +75,7 @@ const WatchPage: React.FC = () => {
             </div>
           </div>
           <div className="w-full rounded-lg bg-neutral-200/60 p-3">
-            <div className="full mb-2 flex items-center gap-2 text-sm font-semibold">
+            <div className="full mb-2 flex flex-wrap items-center gap-2 text-xs font-semibold sm:text-sm">
               <span>{info.views}</span>
               <span>Premiered {info.uploadTime}</span>
               <span className="text-blue-700">
@@ -82,13 +83,22 @@ const WatchPage: React.FC = () => {
               </span>
             </div>
             {/* details */}
-            <p className="text-sm">{info.description}</p>
+            <p className="text-xs sm:text-sm">{info.description}</p>
           </div>
         </div>
       </div>
-      <div className=" col-span-4 flex w-full flex-col gap-3 lg:col-span-2">
+      {/* videos */}
+      <div className="col-span-4 flex w-full flex-col gap-3 lg:col-span-2 lg:row-span-3">
         <Keywords />
         <VideosColumn videos={videos} />
+        <VideosColumn videos={videos} />
+      </div>
+      {/* comments */}
+      <div className="col-span-4 w-full lg:row-span-2">
+        <Comments
+          commentsCount={videos.length}
+          authors={videos.map((video) => video.author)}
+        />
       </div>
     </main>
   );
