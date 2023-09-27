@@ -39,7 +39,7 @@ export const Keywords: React.FC = () => {
   };
 
   return (
-    <div className="w-full select-none overflow-hidden bg-white pb-3">
+    <div className="w-full select-none overflow-hidden bg-white">
       <div
         ref={scrollableDivRef}
         onMouseDown={handleMouseDown}

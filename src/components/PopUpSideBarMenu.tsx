@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { BiHome, BiBoltCircle, BiWindows, BiLibrary } from "react-icons/bi";
 
-type Props = {};
-
-export const PopUpSideBarMenu: React.FC = (props: Props) => {
+export const PopUpSideBarMenu: React.FC = () => {
   return (
     <div className="flex w-full flex-col gap-5">
       <a

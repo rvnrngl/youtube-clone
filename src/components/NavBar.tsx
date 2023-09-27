@@ -17,10 +17,10 @@ export const NavBar: React.FC = () => {
       <nav className="fixed top-0 z-10 flex h-16 w-full items-center bg-white">
         <div className="grid w-full grid-cols-2 items-center justify-between px-4 py-2 md:grid-cols-4 md:px-6">
           {/* left nav */}
-          <div className="col-span-1 flex items-center md:gap-5">
+          <div className="col-span-1 flex items-center gap-1 md:gap-5">
             <button
               onClick={() => setIsOpen(true)}
-              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-200"
+              className="flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-200"
             >
               <BiMenu className="text-[1.6rem]" />
             </button>
@@ -41,19 +41,19 @@ export const NavBar: React.FC = () => {
                 <BiSearch className="text-2xl" />
               </div>
             </div>
-            <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-neutral-200 hover:brightness-95">
+            <div className="flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full bg-neutral-200 hover:brightness-95">
               <BiMicrophone className="text-xl" />
             </div>
           </div>
           {/* right nav */}
           <div className="col-span-1 flex items-center justify-end md:gap-4">
-            <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-200 md:hidden">
+            <div className="flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-200 md:hidden">
               <BiSearch className="text-2xl" />
             </div>
-            <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-200">
+            <div className="hidden h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-200 sm:flex">
               <BiVideoPlus className="text-2xl" />
             </div>
-            <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-200">
+            <div className="hidden h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-200 sm:flex">
               <BiBell className="text-2xl" />
             </div>
             <div className="flex h-10 w-10 flex-shrink-0 cursor-pointer items-center  justify-center overflow-hidden rounded-full bg-neutral-400 hover:bg-neutral-200">
@@ -67,7 +67,8 @@ export const NavBar: React.FC = () => {
         </div>
       </nav>
       <div
-        className={`fixed top-0 z-50 h-screen w-screen bg-black/50 ${
+        onClick={() => setIsOpen(false)}
+        className={`fixed top-0 z-40 h-screen w-screen bg-black/50 ${
           isOpen
             ? "block transition-all duration-200 ease-in-out"
             : "hidden transition-all duration-200 ease-in-out"
@@ -81,17 +82,17 @@ export const NavBar: React.FC = () => {
         }`}
       >
         <div className="flex h-full w-full flex-col gap-5 px-6 py-3">
-          <div className="flex items-center md:gap-5">
+          <div className="flex items-center gap-1 md:gap-5">
             <button
               onClick={() => setIsOpen(false)}
               className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full hover:bg-neutral-200"
             >
               <BiMenu className="text-[1.6rem]" />
             </button>
-            <Link to="/" className="flex cursor-pointer items-center gap-1">
+            <a href="/" className="flex cursor-pointer items-center gap-1">
               <BsYoutube className="text-3xl text-red-500" />
               <span className="font-roboto text-xl font-bold">Youtube</span>
-            </Link>
+            </a>
           </div>
           <PopUpSideBarMenu />
         </div>

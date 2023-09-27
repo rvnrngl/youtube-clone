@@ -49,7 +49,7 @@ export const VideoSection: React.FC = () => {
   };
 
   return (
-    <div className="grid h-full w-full grid-cols-1 gap-4 overflow-y-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid h-full w-full grid-cols-1 gap-4 overflow-y-auto pb-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {videos.map((item, index) => {
         return (
           <div
